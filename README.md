@@ -1,6 +1,6 @@
 # Word Game
 
-## Joy of React, Project I
+## Joy of React, Project 
 
 In this project, we'll recreate a popular online word game, Wordle:
 
