@@ -1,4 +1,7 @@
 import React from 'react';
+import Guess from '../Guess';
+import { range } from '../../utils';
+import { NUM_OF_GUESSES_ALLOWED } from '../../constants'
 
 function FormGame() {
 
@@ -22,14 +25,20 @@ function FormGame() {
     setUserGuess(nextGuess);
   }
 
+
   return <>
     <div className='guess-results'>
-      {guessesArr.length > 0 && guessesArr.map((guess, index) =>
-        <p key={index} className='guess'>{guess}</p>)
+      {
+        range(NUM_OF_GUESSES_ALLOWED - 1).map(num =>
+        (<p key={num} className='guess'>
+          <Guess />
+        </p>)
+        )
       }
     </div>
     <form onSubmit={handleOnSubmit}
       className='guess-input-wrapper'>
+
       <label htmlFor='guess-input'>Enter a guess:</label>
       <input
         minLength={5}
