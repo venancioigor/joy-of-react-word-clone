@@ -3,7 +3,7 @@ import Guess from '../Guess';
 import { range } from '../../utils';
 import { NUM_OF_GUESSES_ALLOWED } from '../../constants'
 
-function FormGame() {
+function FormGame({ answer }) {
 
   const [userGuess, setUserGuess] = React.useState({ guess: '' })
   const [guessesArr, setGuessesArr] = React.useState([]);
@@ -31,7 +31,7 @@ function FormGame() {
       {
         range(NUM_OF_GUESSES_ALLOWED).map(num =>
         (<p key={num} className='guess'>
-          <Guess arrString={
+          <Guess answer={answer} guess={
             typeof guessesArr[num] === 'undefined'
               ? ''
               : guessesArr[num]

@@ -10,7 +10,7 @@ const answer = sample(WORDS);
 console.info({ answer });
 
 function Game() {
-  return <><FormGame /></>;
+  return <><FormGame answer={answer} /></>;
 }
 
 export default Game;
