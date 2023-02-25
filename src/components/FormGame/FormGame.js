@@ -29,9 +29,13 @@ function FormGame() {
   return <>
     <div className='guess-results'>
       {
-        range(NUM_OF_GUESSES_ALLOWED - 1).map(num =>
+        range(NUM_OF_GUESSES_ALLOWED).map(num =>
         (<p key={num} className='guess'>
-          <Guess />
+          <Guess arrString={
+            typeof guessesArr[num] === 'undefined'
+              ? ''
+              : guessesArr[num]
+          } />
         </p>)
         )
       }
