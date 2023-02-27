@@ -1,3 +1,4 @@
+
 export function checkGuess(guess, answer) {
   if (!guess) {
     return null;
@@ -17,6 +18,7 @@ export function checkGuess(guess, answer) {
     } else {
       status = 'incorrect';
     }
+
     return {
       letter: guessChar,
       status,

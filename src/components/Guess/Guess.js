@@ -7,9 +7,9 @@ function Guess({ answer, guess }) {
 
   const guessChars = checkGuess(guess, answer);
 
-
   return <>
-    {range(NUM_OF_GUESSES_ALLOWED - 1).map((num) => (
+    {range(NUM_OF_GUESSES_ALLOWED - 1).map((num) =>
+    (
       <span key={num}
         className={
           guessChars != null
@@ -21,16 +21,6 @@ function Guess({ answer, guess }) {
   </>;
 }
 
-//   return <>
-//     {range(NUM_OF_GUESSES_ALLOWED - 1).map((num) => (
-//       <span key={num}
-//         className={
-//           typeof guess === null
-//             ? 'cell'
-//             : `cell correct`}>
-//         {guess[num]}</span>
-//     ))}
-//   </>;
-// }
+
 
 export default Guess;
